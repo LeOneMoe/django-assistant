@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'chatbot.interface',
+    'chatbot.processor'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
