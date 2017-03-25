@@ -2,13 +2,13 @@ import datetime
 import random
 
 
-HI = ["Привет", "Здарова", "Здравствуйте", "Здаров"]
+HI = ["привет", "здарова", "здравствуйте", "здаров"]
 
-DATA_QUESTION = ["Какой сегодня день?", "Какое сегодня число?", ]
+DATA_QUESTION = ["какой сегодня день", "какое сегодня число", ]
 
-TIME_QUESTION = ["Какое сейчас время?", "Сколько времени?"]
+TIME_QUESTION = ["какое сейчас время", "сколько времени"]
 
-HI_ANSWERS = ["Привет!", "Здравтствуйте"]
+HI_ANSWERS = ["Привет", "Здравтствуйте", "Здаров"]
 
 TIME_ANSWERS = ["Сейчас ", "Время "]
 
@@ -24,26 +24,23 @@ MONTHS = ["января", "февраля", "марта", "апреля",
 
 def asker(expression):
 
-    time = str(datetime.datetime.now().strftime("%H:%M:%S"))
-    weekday = str(WEEK_DAYS[int(datetime.datetime.now().strftime("%w"))]) + ", "
-    mounthday = str(int(datetime.datetime.now().strftime("%d"))) + " "
-    mounth = str(MONTHS[int(datetime.datetime.now().strftime("%m"))]) + " "
-    year = str(int(datetime.datetime.now().strftime("%Y"))) + " "
+	TIME_ = datetime.datetime.now()
+    time = TIME_.strftime("%H:%M:%S")
+    weekday = WEEK_DAYS[int(TIME_.strftime("%w"))] + ", "
+    mounthday = int(TIME_.strftime("%d")) + " "
+    mounth = MONTHS[int(TIME_.strftime("%m"))] + " "
+    year = TIME_.strftime("%Y") + " "
 
-    if expression in HI:
-        answer = random.choice(HI_ANSWERS)
-        is_ok = True
+    if expression.lower() in HI:
+        answer = random.choice(HI_ANSWERS)[0]
 
-    elif expression in TIME_QUESTION:
-        answer = random.choice(TIME_ANSWERS) + time
-        is_ok = True
+    elif expression.lower() in TIME_QUESTION:
+        answer = "{0} {1}".format(random.choice(TIME_ANSWERS), time)            
 
-    elif expression in DATA_QUESTION:
-        answer = weekday + mounthday + mounth + year + "года"
-        is_ok = True
+    elif expression.lower() in DATA_QUESTION:
+        answer = "{0} {1} {2} {3} года.".format(weekday, mounthday, mounth, year)                                   
 
     else:
         answer = "Неизвестный вопрос"
-        is_ok = True
 
-    return is_ok, answer
+    return answer
