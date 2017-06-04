@@ -1,0 +1,34 @@
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+
+.header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-text {
+    background-color: #eee;
+    padding: 50px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.textbox-wrapper {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.main-textbox {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    outline: 0;
+    font-size: 18px;
+    width: 100%;
+}

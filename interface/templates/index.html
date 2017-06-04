@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- Это библиотека bootstrap чтобы быстро и адаптивно верстать -->
+<link rel="stylesheet" href="../static/bootstrap.min.css">
+<!-- В этом файле лежит немного стилей -->
+<link rel="stylesheet" href="../static/style.css">
+<!-- Это очень мощная javascript библиотека. Я её использую для общения с сервером -->
+<script src="../static/jquery-3.2.0.min.js"></script>
+<title>Django assistent</title>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h4>Самый простой ассистент</h4>
+  </div>
+  <div class="main-text" id="text">
+    Привет, ты можешь задать мне вопрос :)
+  </div>
+  <div class="textbox-wrapper">
+    <input type="text" class="main-textbox" id="question"
+           placeholder="Твой вопрос..." autofocus="on">
+  </div>
+</div>
+<!-- В этом файле находится обработчик твои того, что ты вводишь -->
+<script src="../static/script.js"></script>
+</body>
+</html>
